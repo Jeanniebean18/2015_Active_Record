@@ -15,10 +15,18 @@ end
 get "/show_photographers" do
   erb :all_photographers
 end
+
 get "/delete_photographer/:x" do
-  @p = Photographer.find(params[:x])
-  @p.delete
-  erb :photographer_deleted
+  if params["decision"] == "yes"
+    @p = Photographer.find(params[:x])
+    @p.delete
+    @p.name "deleted"
+  else
+    redirect "/show_photographers"
+  end
 end
+
+
+
 
 

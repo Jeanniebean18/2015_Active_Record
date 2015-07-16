@@ -1,3 +1,13 @@
 <%Photographer.all.each do |p|%>
 <p><%=p.name%> <a href = "/edit_photographer/<%=p.id%>">edit</a> &nbsp; <a href = "/delete_photographer/<%=p.id%>"> delete</a></p>
 <%end%>
+
+<div> 
+  <form>
+    <p> Are you sure you want to delete this Owner? :  
+      <input type="radio"  name="decision" value="yes"> Yes
+      <input type="radio"  name="decision" value="no" checked>No
+      
+      <p> <input type="submit" value="delete owner"></p>
+    </form>
+ </div>

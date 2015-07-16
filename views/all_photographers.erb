@@ -1,0 +1,3 @@
+<%Photographer.all.each do |p|%>
+<p><%=p.name%> <a href = "/edit_photographer/<%=p.id%>">edit</a> &nbsp; <a href = "/delete_photographer/<%=p.id%>"> delete</a></p>
+<%end%>
